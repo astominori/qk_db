@@ -1,0 +1,35 @@
+<header>
+  <%= link_to "Quizknock DB",root_path, class:"header-logo" %>
+</header>
+<div class="container">
+  <div class="container-header">
+    <h1>メンバー一覧</h1>
+    <%= link_to "+新規追加", new_member_path, class:"new-button" %>
+  </div>
+  <div class="index-table-wrapper">
+    <div class="table-head">
+      <span class="id-column">ID</span>
+      <span class="first-column">名前</span>
+      <span class="second-column">カテゴリ</span>
+      <span class="third-column">誕生日</span>
+      <span class="forth-column"></span>
+    </div>
+    <ul class="table-body">
+      <% @members.each do |member| %>
+        <li>
+          <div class="item-data">
+            <span class="id-column"><%= member.id %></span>
+            <span class="first-column"><%= member.name %></span>
+            <span class="second-column"><%= member.category %></span>
+            <span class="third-column"><%= member.birthday %></span>
+            <div class="item-menu">
+              <%= link_to "編集", edit_member_path(member.id) %>
+              <%= link_to "削除", member_path(member.id),
+                method: :delete, data: {confirm: "本当に削除しますか？"} %>
+           </div>
+         </div>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>

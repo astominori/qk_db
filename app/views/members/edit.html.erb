@@ -1,0 +1,20 @@
+<header>
+  <%= link_to "メンバー一覧", members_path, class:"header-logo" %>
+</header>
+<div class="container">
+  <div class="container-header">
+    <h1>メンバー情報更新</h1>
+    <%= link_to "キャンセル", members_path, class:"cancel-button" %>
+  </div>
+  <div class="item-form-wrapper">
+    <%= form_for @member do |f| %>
+      <%= f.label :name, "名前", class:"form-label" %>
+      <%= f.text_field :name %>
+      <%= f.label :category, "カテゴリ", class:"form-label" %>
+      <%= f.text_field :category %>
+      <%= f.label :birthday, "誕生日", class:"form-label" %>
+      <%= f.date_field :birthday %>
+      <%= f.submit "更新する" %>
+    <% end %>
+  </div>
+</div>
