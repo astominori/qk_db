@@ -9,19 +9,19 @@
   <div class="index-table-wrapper">
     <div class="table-head">
       <span class="id-column">ID</span>
-      <span class="first-column">名前</span>
-      <span class="second-column">カテゴリ</span>
-      <span class="third-column">誕生日</span>
-      <span class="forth-column"></span>
+      <span class="member-column">名前</span>
+      <span class="member-column">カテゴリ</span>
+      <span class="member-column">誕生日</span>
+      <span class="last-column"></span>
     </div>
     <ul class="table-body">
       <% @members.each do |member| %>
         <li>
           <div class="item-data">
             <span class="id-column"><%= member.id %></span>
-            <span class="first-column"><%= member.name %></span>
-            <span class="second-column"><%= member.category %></span>
-            <span class="third-column"><%= member.birthday %></span>
+            <span class="member-column"><%= member.name %></span>
+            <span class="member-column"><%= member.category %></span>
+            <span class="member-column"><%= member.birthday.strftime("%Y-%m-%d") %></span>
             <div class="item-menu">
               <%= link_to "編集", edit_member_path(member.id) %>
               <%= link_to "削除", member_path(member.id),

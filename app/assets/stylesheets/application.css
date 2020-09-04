@@ -46,6 +46,7 @@
 
  a:hover {
    transition: all 0.3s ease;
+   color: #58d2b2;
  }
 
 
@@ -148,10 +149,6 @@
    display: inline;
  }
 
- .header-logo:hover {
-   color: #58d2b2;
- }
-
  /* container ================================ */
  .container {
    width: 80%;
@@ -221,33 +218,28 @@
    text-align: center;
  }
 
- .first-column {
-   min-width: 200px;
+ .column {
+   width: 300px;
    font-size: 14px;
  }
 
- .second-column {
-   min-width: 200px;
+ .member-column {
+   width: 300px;
    font-size: 14px;
+   text-align: center;
  }
 
- .third-column {
-   min-width: 200px;
+ .last-column {
+   width: 150px;
    font-size: 14px;
  }
-
- .forth-column {
-   min-width: 150px;
-   font-size: 14px;
- }
-
 
  .table-body {
    background-color: #ffffff;
  }
 
  .table-body li {
-   height: 72px;
+   min-height: 72px;
    border: 1px solid #f0f4f9;
    border-top: none;
    line-height: 74px;
@@ -258,17 +250,7 @@
    color: #bac6d3;
  }
 
- .table-body .first-column {
-   font-weight: 500;
-   color: #8491a5;
- }
-
- .table-body .second-column {
-   font-weight: 400;
-   color: #8491a5;
- }
-
- .table-body .third-column {
+ .table-body .column {
    font-weight: 400;
    color: #8491a5;
  }
