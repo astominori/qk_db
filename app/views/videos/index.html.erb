@@ -1,10 +1,18 @@
-<header>
-  <%= link_to "Quizknock DB",root_path, class:"header-logo" %>
-</header>
+<%= render partial:"shared/header" %>
 <div class="container">
   <div class="container-header">
     <h1>動画一覧</h1>
     <div class="links">
+      <%= form_tag videos_path, method: :get, class: 'boards__searchForm' do %>
+        <%= select_tag :member_id,
+                      options_from_collection_for_select(Member.all, :id, :name, params[:member_id]),
+                      {
+                        prompt: 'タグで絞り込み',
+                        class: 'form-control boards__select',
+                          onchange: 'submit(this.form);'
+                      }
+        %>
+      <% end %>
       <%= link_to "+新規追加", new_video_path, class:"new-button" %>
       <%= link_to "更新", "refresh", class:"new-button",
       data: {confirm: "本当に更新しますか？"} %>
@@ -22,7 +30,7 @@
         <li>
           <div class="item-data">
             <span class="id-column"><%= video.id %></span>
-            <span class="column"><%= link_to video.name, video.url %></span>
+            <span class="column"><%= link_to video.name, video_path(video) %></span>
             <span class="column"><%= video.upload_at.strftime("%Y-%m-%d") %></span>
             <div class="item-menu">
               <%= link_to "編集", edit_video_path(video.id) %>
@@ -34,4 +42,5 @@
         <% end %>
       </ul>
     </div>
+    <%= paginate @videos %>
   </div>

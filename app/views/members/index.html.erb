@@ -1,6 +1,4 @@
-<header>
-  <%= link_to "Quizknock DB",root_path, class:"header-logo" %>
-</header>
+<%= render partial:"shared/header" %>
 <div class="container">
   <div class="container-header">
     <h1>メンバー一覧</h1>
@@ -32,4 +30,5 @@
         <% end %>
       </ul>
     </div>
+    <%= paginate @members %>
   </div>

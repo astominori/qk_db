@@ -1,0 +1,18 @@
+<%= render "shared/header" %>
+<div class="container">
+  <div class="container-header">
+    <h1>動画詳細</h1>
+    <%= link_to "もどる", videos_path, class:"cancel-button" %>
+  </div>
+    <div class="index-table-wrapper">
+      <div class="table-head">
+        <%= @video.name %>
+      </div>
+      <% @video.members.each do |member| %>
+        <span class="badge"><%= member.name %></span>
+      <% end %>
+      <ul class="table-body"><iframe width="560" height="315"
+        src="<%= @video.url %>" <iframe width="560" height="315" src="https://www.youtube.com/embed/cgTT4i4yoxs"
+         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>

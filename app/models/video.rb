@@ -10,4 +10,9 @@
 #  updated_at :datetime         not null
 #
 class Video < ApplicationRecord
+  validates :name, presence: true, length: {maximum: 20}
+  validates :url, presence: true
+
+  has_many :video_member_relations
+  has_many :members, through: :video_member_relations
 end

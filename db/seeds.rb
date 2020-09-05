@@ -16,5 +16,11 @@ Video.create([
     upload_at: "2020-08-31"},
   {name: "ボジョレーの評価がツッコミどころ満載ww東大生がマジレスしてみたww",
     url: "https://www.youtube.com/watch?v=RpNu3X1S46A",
+  upload_at: "2019-11-19"},
+  {name: "ボジョレーの評価がツッコミどころ満載ww東大生がマジレスしてみたww",
+    url: "https://www.youtube.com/watch?v=RpNu3X1S46A",
+  upload_at: "2019-11-19"},
+  {name: "ボジョレーの評価がツッコミどころ満載ww東大生がマジレスしてみたww",
+    url: "https://www.youtube.com/watch?v=RpNu3X1S46A",
   upload_at: "2019-11-19"}
   ])
