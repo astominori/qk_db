@@ -8,9 +8,13 @@ class MembersController < ApplicationController
   end
 
   def create
-    Member.create(member_params)
-    flash[:notice] = "作成しました"
-    redirect_to members_path
+    @member = Member.new(member_params)
+    if @member.save
+      flash[:notice] = "作成しました"
+      redirect_to members_path
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -18,10 +22,12 @@ class MembersController < ApplicationController
   end
 
   def update
-    @member = Member.find(params[:id])
-    @member.update(member_params)
-    flash[:notice] = "更新しました"
-    redirect_to members_path
+    if @member.update(member_params)
+      flash[:notice] = "更新しました"
+      redirect_to members_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy

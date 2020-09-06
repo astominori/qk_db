@@ -374,60 +374,10 @@
    transition: all 0.3s ease;
  }
 
- /* モーダルCSSここから */
- .modalArea {
-   visibility: hidden; /* displayではなくvisibility */
-   opacity : 0;
-   position: fixed;
-   z-index: 10; /* サイトによってここの数値は調整 */
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   transition: .4s;
-   text-align:center;
- }
-
- .modalBg {
-   width: 100%;
-   height: 100%;
-   background-color: rgba(30,30,30,0.9);
- }
-
- .modalWrapper {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform:translate(-50%,-50%);
-   max-width: 500px;
-   padding: 10px 30px;
-   background-color: #fff;
- }
-
- .modalContents {
-   margin:20px 0px;
- }
-
- .closeModal {
-   position: absolute;
-   top: 0.3rem;
-   right: 1rem;
-   cursor: pointer;
- }
-
- /* flash */
-
- .flash {
-  margin: 0 auto;
-  color: #6c7686;
-  text-align: center;
-  background-color: lightBlue;
-}
-
 /* kaminari */
  .pure-g{
    justify-content: center;
-   margin-top: 5px;
+   margin-top: 20px;
    margin-bottom: 20px;
    display: flex;
  }

@@ -1,0 +1,21 @@
+<%= form_for video do |f| %>
+  <%= render partial: "shared/error_messages", locals: {object: f.object} %>
+  <div class="item-form-wrapper">
+    <%= f.label :name, "名前", class: "form-label" %>
+    <%= f.text_field :name %>
+    <%= f.label :url, "動画URL", class: "form-label" %>
+    <%= f.text_field :url %>
+    <%= f.label :upload_at, "動画アップロード日", class: "form-label" %>
+    <%= f.date_field :upload_at %>
+    <span>タグ</span>
+    <%= f.collection_check_boxes(:member_ids, Member.all, :id, :name) do |member| %>
+      <div class="form-check">
+        <%= member.label class: 'form-check-label' do %>
+          <%= member.check_box class: 'form-check-input' %>
+          <%= member.text %>
+        <% end %>
+      </div>
+    <% end %>
+    <%= f.submit yield(:submit) %>
+  <% end %>
+</div>

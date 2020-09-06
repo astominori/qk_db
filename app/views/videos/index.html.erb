@@ -8,7 +8,7 @@
                       options_from_collection_for_select(Member.all, :id, :name, params[:member_id]),
                       {
                         prompt: 'タグで絞り込み',
-                        class: 'form-control boards__select',
+                        class: 'form-control members__select',
                           onchange: 'submit(this.form);'
                       }
         %>
@@ -30,14 +30,14 @@
         <li>
           <div class="item-data">
             <span class="id-column"><%= video.id %></span>
-            <span class="column"><%= link_to video.name, video_path(video) %></span>
+            <span class="column"><%= link_to video.name, video.url %></span>
             <span class="column"><%= video.upload_at.strftime("%Y-%m-%d") %></span>
             <div class="item-menu">
               <%= link_to "編集", edit_video_path(video.id) %>
               <%= link_to "削除", video_path(video.id),
                 method: :delete, data: {confirm: "本当に削除しますか？"} %>
-            </div>
-          </div>
+           </div>
+         </div>
         </li>
         <% end %>
       </ul>

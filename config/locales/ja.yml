@@ -1,4 +1,14 @@
 ja:
+  activerecord:
+    attributes:
+      member:
+        name: メンバー名
+        birthday: 生年月日
+        category: カテゴリ
+      video:
+        name: 動画名
+        url: 動画URL
+        upload_at: アップロード日
   views:
     pagination:
       first: 最初

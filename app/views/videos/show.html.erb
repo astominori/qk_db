@@ -9,7 +9,7 @@
         <%= @video.name %>
       </div>
       <% @video.members.each do |member| %>
-        <span class="badge"><%= member.name %></span>
+        <span class="badge"><%= link_to member.name,  %></span>
       <% end %>
       <ul class="table-body"><iframe width="560" height="315"
         src="<%= @video.url %>" <iframe width="560" height="315" src="https://www.youtube.com/embed/cgTT4i4yoxs"

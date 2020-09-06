@@ -3,7 +3,7 @@ class VideosController < ApplicationController
 
   def index
     @videos = params[:member_id].present? ? Member.find(params[:member_id]).videos : Video.all
-    @videos = Video.page(params[:page]).per(10)
+    @videos = @videos.page(params[:page]).per(10)
   end
 
   def edit
@@ -25,9 +25,13 @@ class VideosController < ApplicationController
   end
 
   def create
-    Video.create(video_params)
-    flash[:notice] = "作成しました"
-    redirect_to videos_path
+    @video = Video.new(video_params)
+    if @video.save
+      flash[:notice] = "作成しました"
+      redirect_to videos_path
+    else
+      render 'new'
+    end
   end
 
   def destroy
@@ -39,9 +43,12 @@ class VideosController < ApplicationController
 
   def update
     @video = Video.find(params[:id])
-    @video.update(video_params)
-    flash[:notice] = "更新しました"
-    redirect_to videos_path
+    if @video.update(video_params)
+      flash[:notice] = "更新しました"
+      redirect_to videos_path
+    else
+      render 'edit'
+    end
   end
 
   private
@@ -51,7 +58,6 @@ class VideosController < ApplicationController
 
   def youtube_test
     video = Yt::Video.new id: 'UsThNLK0Ivo'
-    p video.description
     binding.pry
   end
 

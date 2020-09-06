@@ -13,10 +13,10 @@
       <span class="last-column"></span>
     </div>
     <ul class="table-body">
-      <% @members.each do |member| %>
+      <% @members.each.with_index(1) do |member,index| %>
         <li>
           <div class="item-data">
-            <span class="id-column"><%= member.id %></span>
+            <span class="id-column"><%= index %></span>
             <span class="member-column"><%= member.name %></span>
             <span class="member-column"><%= member.category %></span>
             <span class="member-column"><%= member.birthday.strftime("%Y-%m-%d") %></span>
